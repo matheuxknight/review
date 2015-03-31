@@ -1,0 +1,9 @@
+<?php
+
+echo announcementRemove();
+
+function announcementRemove(){
+	$user = getUser();
+	$user->announcement = 0;
+	$user->save();
+}

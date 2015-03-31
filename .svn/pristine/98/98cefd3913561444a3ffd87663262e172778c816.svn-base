@@ -1,0 +1,78 @@
+.page #headermenu
+{
+	font-size: 1vw;
+}
+
+.page #headermenu a
+{
+	color: #ffffff;
+}
+
+.ui-widget-header
+{
+	background: #4171b7;
+	border: 0px;
+	color: #ffffff;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default
+{
+	background: #4171b7;
+	border: 1px solid #4171b7;
+	color: #ffffff;
+}
+
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited
+{
+	color: #ffffff;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active
+{
+	background: white;
+	color: #4171b7;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover
+{
+	background: white;
+	color: #4171b7;
+}
+
+.ui-state-hover a,
+.ui-state-hover a:link,
+.ui-state-hover a:visited
+{
+	color: #4171b7;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited
+{
+	color: #4171b7;
+}
+
+html, body
+{
+	color: #555555;
+}
+
+a
+{
+	color: #428bca;
+}
+ 
+footer
+{
+	background: #4171b7;
+	color: #ffffff;
+}

@@ -1,0 +1,11 @@
+<?php
+
+echo "<main class='error'>";
+echo "<iframe style='height: 750px;' id='linkframe' src='/ws-10375/Credits for Learning Site.pdf' frameborder='0' height='100%' width='100%' autofocus><p>Your browser does not support iframes.</p></iframe></main>";
+
+
+
+
+
+
+

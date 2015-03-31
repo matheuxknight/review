@@ -1,0 +1,8 @@
+
+<body>
+<form method=post action="/">
+Username: <input type=text name=LoginForm[username]><br>
+Password: <input type=password name=LoginForm[password]><br>
+<input type=submit value=login>
+</form>
+</body>

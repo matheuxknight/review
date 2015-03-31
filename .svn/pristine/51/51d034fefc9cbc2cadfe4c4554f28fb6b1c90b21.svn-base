@@ -1,0 +1,117 @@
+
+@import url("table.css");
+@import url("ssitem.css");
+@import url("portlet.css");
+@import url("sans.css");
+@import url("page.css");
+@import url("object.css");
+
+body
+{
+	font: normal 10pt Lato,Arial,sans-serif;
+	font-size: .9em;
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	color: #555;
+}
+
+a /*, a:visited*/
+{
+	color: #306495;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #73471B;
+	text-decoration: none;
+}
+
+pre
+{
+	border-left: 5px solid #F5F5F5;
+	font-family: "Courier New", Courier, mono;
+	margin:0.3em;
+	padding:0.5em;
+}
+
+/*h2
+{
+	margin-top: 10px;
+	margin-bottom: 5px;
+}*/
+
+h3
+{
+	font-size: 1.3em;
+	font-weight: bold;
+	color: #444444;
+}
+
+h4
+{
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #444444;
+}
+
+img
+{
+	border: 0;
+}
+
+/* ---------------------------------------------- */
+
+.errorMessage
+{
+	color: red;
+}
+
+/*span.tag
+{
+	padding: 0 4px 0 0;
+}*/
+
+.buttonwrapper ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.buttonwrapper li
+{
+	list-style-type: none;
+}
+
+.buttonwrapper input[type=text]
+ {
+	background: #f5f5f5;
+	color: #000000 !important;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 22px;
+	height: 30px !important;
+	border: 1px solid #dfdfdf;
+	border-radius: 4px;
+	text-align: left;
+	-webkit-border-radius: 4px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding-right: 10px;
+	padding-left: 10px;
+ }
+
+.recorder-fullbrowser
+{
+	position: absolute;
+	z-index: 61;
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+}
+

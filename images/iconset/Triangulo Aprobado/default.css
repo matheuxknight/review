@@ -1,0 +1,78 @@
+.page #headermenu
+{
+	font-size: 1vw;
+}
+
+.page #headermenu a
+{
+	color: #ffffff;
+}
+
+.ui-widget-header
+{
+	background: #ee6a00;
+	border: 0px;
+	color: #ffffff;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default
+{
+	background: #ee6a00;
+	border: 1px solid #ee6a00;
+	color: #ffffff;
+}
+
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited
+{
+	color: #ffffff;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active
+{
+	background: white;
+	color: #ee6a00;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover
+{
+	background: white;
+	color: #ee6a00;
+}
+
+.ui-state-hover a,
+.ui-state-hover a:link,
+.ui-state-hover a:visited
+{
+	color: #ee6a00;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited
+{
+	color: #ee6a00;
+}
+
+html, body
+{
+	color: #555555;
+}
+
+a
+{
+	color: #428bca;
+}
+ 
+footer
+{
+	background: #ee6a00;
+	color: #ffffff;
+}

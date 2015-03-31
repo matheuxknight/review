@@ -1,0 +1,14 @@
+<?php
+
+showAdminHeader(4);
+$announcements = getdbolist('announcement');
+
+echo "<table><tr><th>Active Annoncements</th><th>Delete</th></tr>";
+foreach($announcements as $announcement){
+        if($announcement->valid == 1){
+            echo "<tr><td>$b->content</td><td>";
+            echo l(mainimg('16x16_delete.png'), 'javascript:void(0)', array('class'=>"delete_pair", 'onclick'=>""));
+            echo "</td></tr>";
+        }    
+    }
+echo "</table>";

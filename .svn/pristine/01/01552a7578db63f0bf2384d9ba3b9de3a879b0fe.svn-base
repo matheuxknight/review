@@ -1,0 +1,14 @@
+<?php
+
+echo announcementRemove(trim($_REQUEST['num']));
+
+function announcementRemove($num){
+	$user = getUser();
+    $a = explode(",",$user->announcement);
+    for($i = 0; $i == count($a); $i++){
+        $a[$i] == $num;
+    }
+	$a = implode(",", $a);
+	$user->announcement = $a;
+	$user->save();
+}

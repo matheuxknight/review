@@ -1,0 +1,102 @@
+<?php
+echo <<<end
+<style>
+dt, dd {
+line-height: 2.2em;
+}
+#newwebinar{
+margin-left:2%;
+}
+</style>
+end;
+
+$user = getUser();
+
+echo "<main class='container' style='max-width:970px'>";
+echo "<div style='line-height:1em; margin-right;10px; margin-top:-22px; margin-bottom:30px; margin-left:-5px'>";
+echo "<h3 style='width:650px; max-height:80px; text-overflow:visible; margin-top:20px; margin-left:120px; position:absolute;color:rgb(0, 122, 187);' class='error h2'><a href='/my/settings' style='color:rgb(0, 122, 187);text-decoration:none'>";
+
+	echo $user->firstname;
+	echo "<br>";
+	echo "$user->secondname ";
+	echo "$user->thirdname ";
+	echo "$user->fourthname ";
+	echo "$user->fifthname ";
+	echo "$user->sixthname ";
+	echo "</a>";
+	echo "</h3>";
+	echo "<a href='/my/settings' style='color:rgb(0, 122, 187); text-decoration:none;'>";
+	echo userImage($user, 100);
+	echo "</a>";
+	echo "</div>";
+
+	if(controller()->rbac->globalAdmin())
+	{
+		echo "<h4 align='right' class='error' style='text-decoration:none; color:rgb(0, 122, 187); line-height:1em; margin-right:5px; text-align:right; margin-top:-83px; '><a href='/textbook/addstudentcode' style='text-decoration:none; color:rgb(0, 122, 187)' ><font style='border-bottom:1px blue dotted;'>Enroll in my course</font></a>   <a href='javascript:void(0)' class='popup' onclick='showPopup(this)' data-src='/file/embed?id=18089'><em style='color:#ec4546; font-size:16px; verticle-align:middle' class='fa fa-question-circle'></em></a></h4>";
+		echo "<h4 align='right' class='error' style='text-decoration:none; color:rgb(0, 122, 187); line-height:1em; margin-right:5px; text-align:right; margin-bottom:22px'><a href='/textbook/addteachercourse' style='text-decoration:none; color:rgb(0, 122, 187)' ><font style='border-bottom:1px blue dotted;'>Create my course</font></a>   <a href='javascript:void(0)' class='popup' onclick='showPopup(this)' data-src='/file/embed?id=18088'><em style='color:#ec4546; font-size:16px; verticle-align:middle' class='fa fa-question-circle'></em></a></h4>";
+	}
+	
+	else
+	{
+		if(controller()->rbac->globalStudent())
+			echo "<h4 align='right' class='error' style='text-decoration:none; color:rgb(0, 122, 187); line-height:1em; margin-right:5px; text-align:right; margin-top:-50px; margin-bottom:22px'><a href='/textbook/addstudentcode' style='text-decoration:none; color:rgb(0, 122, 187)' ><font style='border-bottom:1px blue dotted;'>Enroll in my course</font></a>   <a href='javascript:void(0)' class='popup' onclick='showPopup(this)' data-src='/file/embed?id=18089'><em style='color:#ec4546; font-size:16px; verticle-align:middle' class='fa fa-question-circle'></em></a></h4>";
+		
+		if(controller()->rbac->globalTeacher())
+			echo "<h4 align='right' class='error' style='text-decoration:none; color:rgb(0, 122, 187); line-height:1em; margin-right:5px; text-align:right; margin-top:-50px; margin-bottom:22px'><a href='/textbook/addteachercourse' style='text-decoration:none; color:rgb(0, 122, 187)' ><font style='border-bottom:1px blue dotted;'>Create my course</font>   <a href='javascript:void(0)' class='popup' onclick='showPopup(this)' data-src='/file/embed?id=18088'><em style='color:#ec4546; font-size:16px; verticle-align:middle' class='fa fa-question-circle'></em></a></a></h4>";
+	}
+echo "<div class='error' style='background-color: #f5f3e9; margin-left:-5px; margin-right:-5px'>";
+echo "<h2 style='margin-left:2%; padding-top:2%'>Webinars</h2>";
+echo <<<end
+<div id='newwebinar'><p style="font-size:115%;">Sign up for a webinar to learn the <em>ins</em> and <em>outs</em> of the Learning Site:</p>
+<dl style="line-height:1px;margin: auto 20px auto 20px;">
+ 
+<p>Check back in the future for more Webinars!</p>
+       </dl></div>
+end;
+echo "<p style='font-size:18px;margin-left:2%;margin-top:1%'>Learn more about your Learning Site by watching previous webinars:</p>";
+echo "<p style='margin-left:5%'>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Azulejo Webinar' data-src='/file/embed?id=47750'>Azulejo, 9/29/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Tejidos Webinar' data-src='/file/embed?id=47727'>Tejidos, 9/30/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Tri&aacute;ngulo Aprobado Webinar' data-src='/file/embed?id=47716'>Tri&aacute;ngulo Aprobado, 10/1/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Chiarissimo Uno Webinar' data-src='/file/embed?id=47763'>Chiarissimo Uno, 10/16/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Neue Blickwinkel Webinar' data-src='/file/embed?id=47755'>Neue Blickwinkel, 10/17/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='APprenons Webinar' data-src='/file/embed?id=47754'>APprenons, 10/20/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Learning Site Basics' data-src='/file/embed?id=50634'>Learning Site Basics, 01/07/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Student Performance and Grades' data-src='/file/embed?id=50633'>Student Performance and Grades, 01/14/15</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Using the Comparative Recorder' data-src='/file/embed?id=51922'>Using the Comparative Recorder, 01/21/15</a></br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Learning Site Activities' data-src='/file/embed?id=52473'>Learning Site Activities, 01/28/15</a></p>";
+echo "<h2 style='margin-left:2%; padding-top:2%; margin-top:0px'>Videos</h2>";
+echo "<p style='font-size:18px;margin-left:2%;margin-top:1%'>Use our videos to help you navigate the Learning Site.</p>";
+echo "<p style='margin-left:5%'>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Signing Up For An Account' data-src='/file/embed?id=18087'>Signing up for an account</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Creating Your Course' data-src='/file/embed?id=18088'>Creating your course</a><br>
+		<a href='javascript:void(0)' class='popup' onclick='showPopup(this)' title='Enrolling In A Course' data-src='/file/embed?id=18089'>Students enrolling in your course</a></p>
+		<p style='font-size:18px;margin-left:2%;margin-top:1%'>
+		More coming soon!</p>";
+echo "</div>";
+echo "</main>";
+echo <<<end
+<script type="text/javascript">
+	$(document).ready(function() 
+{
+	$('#popup').dialog({ autoOpen: false, modal: true, width: '620', dialogClass:'modalpopup' })
+	$('.popup').click(function(){ $('div#popup').dialog('open'); });
+})
+
+function showPopup(object){
+	var x = object.title;
+	var link = object.getAttribute('data-src');
+	$('#ui-id-1').text(x);
+	$('#viewer').attr('src',link);
+}
+</script>
+<div id="popup" title=''>
+    <p class='error' style='font-size:18px; padding:0px' autofocus></p>
+    <p style='font-size:14px; text-align:center'><iframe id='viewer' width=480 height=360 frameborder=0 seamless src=''></iframe></p>
+</div>
+end;
+
+
+
+
+

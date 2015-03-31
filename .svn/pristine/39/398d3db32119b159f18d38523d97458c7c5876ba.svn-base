@@ -1,0 +1,123 @@
+<?php
+
+showAdminHeader(4);
+$announcements = getdbolist('announcement');
+
+echo "<table id='alertTable'><tr id='alertHeader'><th>Active Annoncements</th><th>Modify</th></tr>";
+foreach($announcements as $a){
+        if($a->status == 1){
+            echo "
+            <tr class='alertContainer'>
+                <td class='alertContent' id='alertContent-".$a->id."'>$a->content</td>
+                <td class='alertModify'>
+                    <div id='view-".$a->id."' class='viewAlert' onclick='fullView(this)'>Full Screen View</div>
+                    <div id='edit-".$a->id."' class='editAlert' onclick='editAlert(this)'>Edit Alert</div>
+                    <div id='delete-".$a->id."' class='deleteAlert' onclick='removeAlert(this)'>Delete Alert</div>
+                </td>
+            </tr>";
+        }    
+    }
+echo "
+<tr id='addAlertContainer'>
+    <button id='extraAlert' onclick='extraAlert()'>Add Announcement</button>
+    <div id='addAlert'>
+        <td>
+            <div id='messageAdd'>
+                <div class='alertLabel'>Alert Message:</div>
+                <input type='text' class='alertInput' id='newAlertMessage' value='' />
+            </div>
+            <div id='linkAdd'>
+                <div class='alertLabel'>Read More URL:</div>
+                <input type='text' class='alertInput' id='newAlertURL' value='' />
+            </div>
+        </td>
+        <td>
+            <button id='addAlertSave' onclick='addAlert()'>Save Announcement</button>
+        </td>
+    </div>
+</tr>
+</table>
+
+<div id='popup' title='Full View Announcement'>
+    <div id='fullViewer' autofocus></div>
+</div>
+
+<script>
+\$(document).ready(function() 
+{
+	\$('#popup').dialog({ autoOpen: false, modal: true, width: '100%', dialogClass:'modalpopup' })
+	\$('.viewAlert').click(function(){ \$('div#popup').dialog('open'); });
+})
+
+    function removeAlert(clicked){
+	    var id = clicked.id.substr(7);
+		\$.ajax({
+            url: 'http://devlearningsite.waysidepublishing.com/admin/announcementSave',
+			type: 'POST',
+			data: { num: id, action: 1 },
+			cache: false,
+			success: function(){
+			if(confirm('Successfully Removed.')){
+				window.location.reload();}
+			}
+        });}
+    function saveAlert(clicked){
+	    var id = clicked.id.substr(7);
+        var container = click.parentNode.parentNode
+        var x = container.childNodes[0].childNodes[2].innerHTML;
+        var y = container.childNodes[1].childNodes[2].innerHTML;
+		\$.ajax({
+            url: 'http://devlearningsite.waysidepublishing.com/admin/announcementSave',
+			type: 'POST',
+			data: { num: id, action: 2, message: x, more: y },
+			cache: false,
+			success: function(){
+			if(confirm('Successfully Edited.')){
+				window.location.reload();}
+			}
+        });}  
+    function addAlert(clicked){
+	    var id = 0;
+        var container = click.parentNode.parentNode
+        var x = container.childNodes[0].childNodes[2].innerHTML;
+        var y = container.childNodes[1].childNodes[2].innerHTML;
+		\$.ajax({
+            url: 'http://devlearningsite.waysidepublishing.com/admin/announcementSave',
+			type: 'POST',
+			data: { num: id, action: 3, message: x, more: y },
+			cache: false,
+			success: function(){
+			if(confirm('Successfully Added.')){
+				window.location.reload();}
+			}
+        });} 
+    function editAlert(clicked){
+        var id = clicked.id.substr(7);
+        var container = clicked.parentNode.parentNode;
+        container.HTML = '
+        <div id='editAlert'>
+            <td>
+                <div id='messageEdit'>
+                    <div class='alertLabel'>Alert Message:</div>
+                    <input type='text' class='alertInput' id='editAlertMessage' value='' />
+                </div>
+                <div id='linkEdit'>
+                    <div class='alertLabel'>Read More URL:</div>
+                    <input type='text' class='alertInput' id='newAlertURL' value='' />
+                </div>
+            </td>
+            <td>
+                <button id='editAlertSave' onclick='saveAlert()'>Save Announcement</button>
+            </td>
+        </div>   
+    }
+    function viewAlert(clicked){
+        var id = clicked.id.substr(5);
+        var x = document.getElementById('alertContent-'id);
+        \$('#fullViewer').html(x);
+    }
+    function extraAlert(){
+        \$('#extraAlert').hide();
+        \$('#addAlert').show();
+    }
+</script>";

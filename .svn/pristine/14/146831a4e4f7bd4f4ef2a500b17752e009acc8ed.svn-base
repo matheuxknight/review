@@ -1,0 +1,161 @@
+
+/* ---------------------------------------------- */
+
+.ssnavigation
+{
+	padding: 10px 0 0 0;
+}
+
+.ssrow:hover
+{
+	background-color: #E3F0F8;
+}
+
+/* ---------------------------------------------- */
+
+/* this is only used by showUserHeader() */
+.ssheader
+{
+	padding: 10px 0px 10px 0;
+}
+
+.ssheader img
+{
+	float: left;
+}
+
+.ssheader h2
+{
+	padding: 12px 0 12px 60px;
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.ssheader p
+{
+	margin: 0;
+	padding: 10px 0 0 0px;
+}
+
+
+/* ---------------------------------------------- */
+
+.ssbox
+{
+	-moz-border-radius: 7px;
+	font-size: 1em;
+	padding: 2px;
+	margin-bottom: 15px;
+	background-color: #fffbe7;
+}
+
+.ssbox .header
+{
+	font-weight: bold;
+	color: #555;
+	font-size: 1.1em;
+	line-height: 1;
+	padding: 5px 10px 5px 10px;
+	margin: 0;
+}
+
+.ssbox .header img
+{
+	float: left;
+	border: 0;
+	padding: 0 10px 0 0;
+}
+
+.ssbox .subheader
+{
+	font-weight: normal;
+	font-size: 0.8em;
+	margin: 2px 0 0 0;
+}
+
+.ssbox .teacher
+{
+	font-weight: normal;
+	font-size: 0.8em;
+	margin: 10px 0 0 0;
+}
+
+.ssbox .actions
+{
+	margin: 0;
+	padding: 10px;
+	float: right;
+}
+
+.ssbox .content
+{
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	background-color: #ffffee;
+	padding: 10px 10px 10px 10px;
+	font-weight: normal;
+}
+
+.ssbox .smallcontent
+{
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	background: #ffffee;
+	padding: 10px 10px 10px 10px;
+	font-weight: normal;
+	font-size: 0.9em;
+}
+
+/* ---------------------------------------------- */
+
+.sstitle
+{
+	font-weight: bold;
+	font-size: 1.5em;
+	padding: 5px 5px 5px 0px;
+	border-collapse: separate;
+}
+
+.sstitle .small
+{
+	font-weight: normal;
+	font-size: 0;		/*HERE:*/
+}
+
+.ssitem
+{
+	font-weight: bold;
+	font-size: 1.1em;
+	margin: 5px;
+	border-collapse: separate;
+}
+
+.ssitem:hover
+{
+	background-color: #E3F0F8;
+}
+
+.ssitem .small
+{
+	font-weight: normal;
+	font-size: 0.8em;
+}
+
+.ssitem p
+{
+	font-weight: normal;
+	font-size: 0.8em;
+	padding: 0;
+	margin: 0;
+	padding: 0px 0 0 0;
+}
+
+/**********************/
+
+
+
+
+
+
+

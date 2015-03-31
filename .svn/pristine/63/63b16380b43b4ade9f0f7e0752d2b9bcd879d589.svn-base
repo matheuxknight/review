@@ -1,0 +1,66 @@
+<?php
+
+class announcement extends CActiveRecord
+{
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	public function tableName()
+	{
+		return 'announcement';
+	}
+
+	public function rules()
+	{
+		return array(
+		);
+	}
+
+	public function relations()
+	{
+		return array(
+			
+		);
+	}
+
+	public function attributeLabels()
+	{
+		return array(
+            'id'=>'Id',
+            'content'=>'Content',
+            'status'=>'Status',
+            'more'=>'More',
+            'message'=>'Message',
+		);
+	}
+    
+    public function getStatus(){
+        $a = $this->status;
+        return $a;
+    }
+    
+    public function getMessage(){
+        return($this->message);
+    }
+    
+    public function getMore(){
+        return($this->more);
+    }    
+    
+    public function getContent(){ 
+        $string =
+            "<div id='announcement'>
+	               <div class='close-holder'>
+                        <div id='remove-alert-" .$this->id. "' class='announce-check" .$this->id. "' onclick='removeAlert(this)'></div>
+	               </div>	
+	               <div class='announcement'>
+		                <div class='announcement-icon" .$this->id. "'>
+                   </div>
+		           <div id='announcement-text'>" .$this->message. " <a href='" .$this->more. "'>Read More!</a></div>
+             </div>";
+        return $string;
+    }
+}
+

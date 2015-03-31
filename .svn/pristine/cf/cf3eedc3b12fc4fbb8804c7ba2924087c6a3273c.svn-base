@@ -1,0 +1,153 @@
+<?php
+echo <<<end
+<script>
+$(function()
+{
+	$('input:radio').change(
+	    function()
+	    {
+			if(this.value == 'code_issue'){
+				$('#code_issue').show();				
+				}
+			else
+				$('#code_issue').hide();
+		}
+	);
+});
+$(function()
+{
+	$('input:radio').change(
+	    function()
+	    {
+			if(this.value == 'server'){
+				$('#server').show();
+				}
+			else
+				$('#server').hide();
+		}
+	);
+});
+$(function()
+{
+	$('input:radio').change(
+	    function()
+	    {
+			if(this.value == 'other'){
+				$('#other').show();
+				}
+			else
+				$('#other').hide();
+		}
+	);
+});
+</script>
+end;
+
+$this->pageTitle=Yii::app()->name . ' Contact Us';
+
+echo "<main class='error'>";
+echo "<h2>Contact Us</h2>";
+
+echo "<p class='error' style='width:54%'>Use the field below to send us a message with any comments, questions, or concerns and we will be sure to get back to you within 1-2 business days.</p>";
+echo "<p class='error' style='width:54%'>Be sure to check your email for a confirmation of your message sent, as well as a response from Support.</p>";
+
+$this->widget('UniForm');
+
+echo CUFHtml::beginForm();
+echo CUFHtml::errorSummary($contact);
+echo CUFHtml::openTag('fieldset', array('class'=>'inlineLabels'));
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'name');
+echo CUFHtml::activeLabelEx($contact,'name');
+echo CUFHtml::activeTextField($contact,'name', array('maxlength'=>200));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'email');
+echo CUFHtml::activeLabelEx($contact,'email');
+echo CUFHtml::activeTextField($contact,'email', array('maxlength'=>200));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'subject');
+echo CUFHtml::activeLabelEx($contact,'subject');
+echo CUFHtml::activeTextField($contact,'subject', array('maxlength'=>200, 'value'=>$contact->category));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'category');
+echo CUFHtml::activeLabelEx($contact,'category', array('label'=>'Topic'));
+echo "<div id='category' style='float:left; width:37%'>";
+echo "<input type='radio' name='category' id='category' value='code_issue'>&nbsp&nbspI received an error message: &ldquo;Please Contact Support: Code Issue.&rdquo;<br>";
+echo "<input type='radio' name='category' id='category' value='server'>&nbsp&nbspI see the message &ldquo;Reconnecting to server&rdquo; for long periods of time.<br>";
+echo "<input type='radio' name='category' id='category' value='other' default>&nbsp&nbspOther";
+echo "</div>";
+echo CUFHtml::closeCtrlHolder();
+
+$contact->category = $category;
+
+if($contact->category == 'code_issue'){
+	echo "<span id='code_issue'>";
+	}
+else
+	echo "<span id='code_issue' style='display: none;'>";
+	
+echo CUFHtml::openActiveCtrlHolder($contact, 'accesscode');
+echo "<p class='error' style='width:54%; margin:0px; background-color:#FFFFC2'>If you receive an error that states &quot;Please Contact Support: Code Issue,&quot; we will manually enroll you within your course. Enter your Student Access Code, teacher's name, and course name below. We will email you once you are enrolled.</p>";
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'accesscode');
+echo CUFHtml::activeLabelEx($contact,'accesscode', array('label'=>'Student Access Code'));
+echo CUFHtml::activeTextField($contact,'accesscode', array('maxlength'=>19, 'placeholder'=>'XXXX-XXXX-XXXX-XXXX'));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'teacher');
+echo CUFHtml::activeLabelEx($contact,'teacher', array('label'=>'Teacher\'s Name'));
+echo CUFHtml::activeTextField($contact,'teacher', array('maxlength'=>55, 'placeholder'=>'e.g. Mr. Fox'));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'course');
+echo CUFHtml::activeLabelEx($contact,'course', array('label'=>'Course Name'));
+echo CUFHtml::activeTextField($contact,'course', array('maxlength'=>55, 'placeholder'=>'e.g. Mr. Fox\'s Class'));
+echo CUFHtml::closeCtrlHolder();
+
+echo "</span>";
+
+if($contact->category == 'server'){
+	echo "<span id='server'>";
+	}
+else
+	echo "<span id='server' style='display: none;'>";
+	
+echo CUFHtml::openActiveCtrlHolder($contact, 'server');
+echo "<p class='error' style='width:54%; margin:0px; background-color:#FFFFC2'>Your school's network settings may be restricting you from accessing parts of the Learning Site. Provide contact information for your school's IT Department so we can help them resolve the issue.</p>";
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'it');
+echo CUFHtml::activeLabelEx($contact,'it', array('label'=>'IT Contact Name'));
+echo CUFHtml::activeTextField($contact,'it', array('maxlength'=>55, 'placeholder'=>'Name'));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'itemail');
+echo CUFHtml::activeLabelEx($contact,'itemail', array('label'=>'IT Contact Email'));
+echo CUFHtml::activeTextField($contact,'itemail', array('maxlength'=>55, 'placeholder'=>'Email'));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'itphone');
+echo CUFHtml::activeLabelEx($contact,'itphone', array('label'=>'IT Contact Phone'));
+echo CUFHtml::activeTextField($contact,'itphone', array('maxlength'=>55, 'placeholder'=>'XXX-XXX-XXXX'));
+echo CUFHtml::closeCtrlHolder();
+
+echo "</span>";
+
+echo CUFHtml::openActiveCtrlHolder($contact, 'body');
+echo CUFHtml::activeLabelEx($contact,'body', array('label'=>Message));
+echo CHtml::textArea('ContactForm[body]', $contact->body, 
+	array('style'=>'width: 37%;height: 12em;'));
+echo CUFHtml::closeCtrlHolder();
+
+echo CUFHtml::closeTag('fieldset');
+showSubmitButton('Submit');
+echo CUFHtml::endForm();
+
+
+
+
+

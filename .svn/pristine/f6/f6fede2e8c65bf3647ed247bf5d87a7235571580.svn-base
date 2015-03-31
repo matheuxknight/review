@@ -1,0 +1,65 @@
+
+<script type="text/javascript">
+$(document).ready(function() 
+{
+	$('#popup').dialog({ autoOpen: false, modal: true, width: '100%', dialogClass:'modalpopup' })
+	$('.viewAlert').click(function(){ $('div#popup').dialog('open'); });
+});
+ 
+ function expireAlert(clicked){
+	    var id = clicked.id.substr(7);
+		
+		$.ajax({
+            url: 'http://devlearningsite.waysidepublishing.com/admin/announcementSave',
+			type: 'POST',
+			data: { num: id, action: 1 },
+			cache: false,
+			success: function(){
+			if(confirm(id)){
+				window.location.reload();}
+			}
+        });}
+    function saveAlert(clicked){
+	    var id = clicked.id.substr(14);
+        var x = document.getElementByID('editAlertMessage-'+id).value;
+        var y = document.getElementByID(''+id);
+		$.ajax({
+            url: 'http://devlearningsite.waysidepublishing.com/admin/announcementSave',
+			type: 'POST',
+			data: { num: id, action: 2, message: x, more: y },
+			cache: false,
+			success: function(){
+			if(confirm(id)){
+				window.location.reload();}
+			}
+        });}  
+    function addAlert(clicked){
+	    var id = 0;
+		var z = document.getElementById('newAlertMessage').value;
+		var y = document.getElementByID('newAlertURL').value;
+		$.ajax({
+            url: 'http://devlearningsite.waysidepublishing.com/admin/announcementSave',
+			type: 'POST',
+			data: { num: id, action: 3, message: x, more: y },
+			cache: false,
+			success: function(){
+			if(confirm(y)){
+				window.location.reload();}
+			}
+        });} 
+    function editAlert(clicked){
+		var id = clicked.id.subtr(5);
+		var container = document.getElementByID('alertRow-'+id);
+        var message = document.getElementByID('announcement-text-'+id).innerHTML;
+		var more = document.getElementByID('announcement-url-'+id).getAttribute('href');
+        container.innerHTML = "<td><div id='messageEdit-"+id"' class='addRow'><div class='alertLabel'>Alert Message:</div><textarea class='alertInput' id='editAlertMessage-"+id"'>"+message+"</textarea></div><div id='linkEdit-"+id"' class='addRow'><div class='alertLabel'>Read More URL:</div><input type='text' class='alertInput' id='editAlertURL-"+id"' value='"+more+"' /></div></td><td><button id='editAlertSave-"+id"' onclick='saveAlert(this)'>Save Announcement</button></td>";
+    }
+    function fullView(clicked){
+		var y = clicked.parentNode.parentNode.childNodes[1].innerHTML;
+        $('#fullViewer').html(y);
+    }
+    function extraAlert(){
+        $('#extraAlert').hide();
+        $('#addAlertContainer').show();
+    }
+</script>

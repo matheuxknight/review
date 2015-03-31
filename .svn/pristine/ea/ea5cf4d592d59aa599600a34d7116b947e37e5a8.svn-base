@@ -1,0 +1,100 @@
+<?php
+
+function showFlashMessage()
+{
+	if(user()->hasFlash('message'))
+	{
+		echo "<div class='confirmation'>";
+		echo user()->getFlash('message');
+		echo "</div>";
+	}
+
+	if(user()->hasFlash('error'))
+	{
+		echo "<div class='errormessage'>";
+		echo user()->getFlash('error');
+		echo "</div>";
+	}
+}
+
+function showPageContent($content)
+{
+	echo "<div id='content'><!-- showPageContent -->";
+	echo $content;
+	echo "</div><!-- showPageContent -->";
+}
+
+function showPageFooter($server)
+{
+	echo "<br><br><br><br><br><br><br><br><br>";
+	echo "<br><br><br><br><br><br><br><br><br>";
+	
+	if($server && !empty($server->footer) && param('theme') == 'wayside')
+		echo $server->footer;
+	
+	else
+	{
+		echo "<div id='footer'>";
+		echo $server->footer;
+		
+		$year = date("Y", time());
+		echo "<p>&copy;2006-$year SANS Inc. All Rights Reserved &#9679; SANSSpace&#8482; ";
+	
+		$version = getdbosql('DatabaseVersion', "1");
+		if($version) echo "$version->version &#9679; $version->updated ";
+	
+		echo "</p>";
+		echo "</div><!-- footer -->";
+	}
+}
+
+function showAnnouncement(){
+echo <<<end
+	<div id='announcement'>
+		<div class='close-holder'>
+			<div id='announce-check'></div>
+		</div>	
+		<div class='announcement'>
+			<div id='announcement-icon'></div>
+			<div id='announcement-text'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href='#'>Read More!</a></div>
+		</div>
+	</div>
+	<div id='announcement'>
+		<div class='close-holder'>
+			<div id='announce-check1'></div>
+		</div>	
+		<div class='announcement'>
+			<div id='announcement-icon1'></div>
+			<div id='announcement-text'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href='#'>Read More!</a></div>
+		</div>
+	</div>
+	<div id='announcement'>
+		<div class='close-holder'>
+			<div id='announce-check2'></div>
+		</div>	
+		<div class='announcement'>
+			<div id='announcement-icon2'></div>
+			<div id='announcement-text'>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href='#'>Read More!</a></div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	$('.confirmation').hide();
+	var aHeight = $('#announcement').height();
+	$('.close-holder').css('line-height',(aHeight - 4) + 'px');
+	$('#announce-check').click(function(){ $('#announcement').slideUp('slow');
+		$.ajax({
+				url: 'http://devlearningsite.waysidepublishing.com/my/announcementRemove',
+				type: 'POST',
+				data: {  },
+				cache: false,
+				success: { }
+			});});
+	})
+	</script>
+end;
+}
+
+
+
+
