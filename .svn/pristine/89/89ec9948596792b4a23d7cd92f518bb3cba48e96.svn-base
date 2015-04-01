@@ -1,9 +1,0 @@
-<?php
-
-$this->pageTitle = "My Saved Work | ". Yii::app()->name;
-echo "<h2>My Work</h2>";
-
-showFolderContents("myfolders");
-
-
-
