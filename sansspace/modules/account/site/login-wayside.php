@@ -10,7 +10,7 @@ echo <<<end
 </script>
 <div id="popup" title="Registering for an account">
     <p class='error' style='font-size:18px; padding:10px' autofocus>If you have never seen this page, you will need to sign up for a new username and password. If you are unable to access an account you already created, use the forgot your password link on the log in page.</p>
-    <p style='font-size:14px; text-align:center'><iframe width=480 height=360 frameborder=0 seamless src='http://learningsite.waysidepublishing.com/file/embed?id=18087'></iframe></p>
+    <p style='font-size:14px; text-align:center'><iframe width=480 height=360 frameborder=0 seamless src='http://reviewlearningsite.waysidepublishing.com/file/embed?id=18087'></iframe></p>
 </div>
 end;
 
@@ -50,7 +50,7 @@ end;
 // echo "<p>";
 // echo "<a class='password-reset' href=''>Forgot your password?</a>";
 // echo "</p></div></div></div></div><p>";
-// echo "Looking for the Legacy Learning Site? <a href='http://legacylearningsite.waysidepublishing.com'>Click here.</a><br>";
+// echo "Looking for the Legacy Learning Site? <a href='http://legacyreviewlearningsite.waysidepublishing.com'>Click here.</a><br>";
 // echo "<em class='fa fa-question-circle'></em> Need help? Contact us at";
 // echo "<a href='mailto:support@waysidepublishing.com'> support@waysidepublishing.com</a></p>";
 // echo "</main>";
@@ -89,7 +89,7 @@ echo "</div>";
 echo "<p>";
 echo "<a class='password-reset' href='/site/forgot'>Forgot your username or password?</a>";
 echo "</p></div></div></div></div><p>";
-//echo "Looking for the Legacy Learning Site? <a href='http://legacylearningsite.waysidepublishing.com'>Click here.</a><br>";
+//echo "Looking for the Legacy Learning Site? <a href='http://legacyreviewlearningsite.waysidepublishing.com'>Click here.</a><br>";
 echo "<a href='mailto:support@waysidepublishing.com'><em class='fa fa-question-circle'></em></a> Need help? Contact us at";
 echo "<a href='mailto:support@waysidepublishing.com'> support@waysidepublishing.com</a></p>";
 echo "</main>";

@@ -1,10 +1,10 @@
 <?php
-
-$textbook = $code->object;
-$listcount = getdbocount('VCourse', "parentid=$code->objectid");
+//$textbook = getparam('id');
+//$id = $textbook;
+$listcount = getdbocount('VCourse', "parentid=$textbook->id");
 
 echo "<h2>Choose my course</h2>";
-echo "Courses available for this code: <b>$code->code</b><br>";
+//echo "Courses available for this code: <b>$code->code</b><br>";
 
 echo "<table width='100%' class='sstitle'><tr>";
 echo "<td width=56>";
@@ -25,27 +25,27 @@ echo <<<end
 <script>
 $(function()
 {
-//	$.get('/textbook/choosecourse_results?code=$code->code', '', function(data)
-//	{
-//		$('#show_results').html(data);
-//	});
+	$.get('/textbook/choosecourse_results?id=$textbook->id', '', function(data)
+	{
+		$('#show_results').html(data);
+	});
 
 	$('#course_search_input').bind('keyup', function(event)
 	{
 		var searchstring = $('#course_search_input').val();
 		if(searchstring == '') return;
 		
-		$.get('/textbook/choosecourse_results?code=$code->code&search='+searchstring, '', function(data)
+		$.get('/textbook/choosecourse_results?id=$textbook->id&search='+searchstring, '', function(data)
 		{
 			$('#show_results').html(data);
 		});
 	})
 });
 
-function doenrollment(code, courseid)
+function doenrollment(courseid)
 {
 	if(confirm("Are you sure you want to enroll into this course? This action cannot be undone."))
-		window.location.href='/textbook/studentenroll?code='+code+'&courseid='+courseid;
+		window.location.href='/textbook/studentenroll?courseid='+courseid;
 }
 
 </script>

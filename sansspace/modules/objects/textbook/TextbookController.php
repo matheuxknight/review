@@ -126,73 +126,82 @@ class TextbookController extends CommonController
 	
 	public function actionAddStudentCode()
 	{
-		$code = new UserCode;
+//		$code = new UserCode;
 //		debuglog($_POST['UserCode']);
-		if(!isset($_POST['UserCode']))
-		{
-			$this->render('addstudentcode', array('code'=>$code));
+//		if(!isset($_POST['UserCode']))
+//		{
+//			$this->render('addstudentcode', array('code'=>$code));
+//			return;
+//		}
+//		
+//		$codestring = $_POST['UserCode']['code'];
+//
+//		$b = preg_match('/\d{4}-\d{4}-\d{4}-\d{4}/', $codestring);
+//		if(!$b)
+//		{
+//			user()->setFlash('error', "Code invalid");
+//			$this->render('addstudentcode', array('code'=>$code));
+//			
+//			return;
+//		}
+//		
+//		$code2 = getdbosql('UserCode', "code='$codestring'");
+//		if(!$code2)
+//		{
+//			user()->setFlash('error', "Code does not exist in database, or entered incorrectly.");
+//			$this->render('addstudentcode', array('code'=>$code));
+//			
+//			return;
+//		}
+//
+//		$code = $code2;
+//		if($code->status == CMDB_USERCODE_UNUSED)	// && !controller()->rbac->globalAdmin())
+//		{
+//			$this->render('choosecourse', array('code'=>$code));
+//			return;
+//		}
+//	
+//		$this->render('addstudentcode', array('code'=>$code));
+		$id = getparam('id');
+		if($id){
+			$textbook = getdbosql('Object', "id='$id'");
+			$this->render('choosecourse', array('textbook'=>$textbook));
 			return;
 		}
-		
-		$codestring = $_POST['UserCode']['code'];
-
-		$b = preg_match('/\d{4}-\d{4}-\d{4}-\d{4}/', $codestring);
-		if(!$b)
-		{
-			user()->setFlash('error', "Code invalid");
-			$this->render('addstudentcode', array('code'=>$code));
-			
-			return;
-		}
-		
-		$code2 = getdbosql('UserCode', "code='$codestring'");
-		if(!$code2)
-		{
-			user()->setFlash('error', "Code does not exist in database, or entered incorrectly.");
-			$this->render('addstudentcode', array('code'=>$code));
-			
-			return;
-		}
-
-		$code = $code2;
-		if($code->status == CMDB_USERCODE_UNUSED)	// && !controller()->rbac->globalAdmin())
-		{
-			$this->render('choosecourse', array('code'=>$code));
-			return;
-		}
-	
-		$this->render('addstudentcode', array('code'=>$code));
+		else
+			$this->render('addstudentcode');
 	}
 	
 	public function actionChooseCourse_results()
 	{
-		$line = getparam('code');
-		$code = getdbosql('UserCode', "code='$line'");
-		
-		$this->renderPartial('choosecourse_results', array('code'=>$code));
+		//$line = getparam('code');
+		//$code = getdbosql('UserCode', "code='$line'");
+		$id = getparam('id');
+		$textbook = getdbosql('Object', "id='$id'");
+		$this->renderPartial('choosecourse_results', array('textbook'=>$textbook));
 	}
 	
 	public function actionStudentEnroll()
 	{
-		$line = getparam('code');
-		$code = getdbosql('UserCode', "code='$line'");
+		//$line = getparam('code');
+		//$code = getdbosql('UserCode', "code='$line'");
 		
-		$course = getdbo('VCourse', getparam('courseid'));
+		$course = getparam('courseid');
+		$user = userid();
+		//if(!$code || !$course)
+		//	$this->redirect(array('my/'));
 		
-		if(!$code || !$course)
-			$this->redirect(array('my/'));
-		
-		if($code->status != CMDB_USERCODE_UNUSED)
-			$this->redirect(array('my/'));
+		//if($code->status != CMDB_USERCODE_UNUSED)
+		//	$this->redirect(array('my/'));
 
-		$code->status = CMDB_USERCODE_USED;
-		$code->userid = userid();
-		$code->courseid = $course->id;
-		$code->started = now();
-		$code->save();
+		//$code->status = CMDB_USERCODE_USED;
+		//$code->userid = userid();
+		//$code->courseid = $course->id;
+		//$code->started = now();
+		//$code->save();
 		
-		safeCourseEnrollment($code->userid, SSPACE_ROLE_STUDENT, $code->courseid);
-		$this->redirect(array('course/', 'id'=>$course->id));
+		safeCourseEnrollment($user, SSPACE_ROLE_STUDENT, $course);
+		$this->redirect(array('course/', 'id'=>$course));
 	}
 
 	public function actionAddTeacherCourse()

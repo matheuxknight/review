@@ -5,7 +5,7 @@ function emailUserCreated($user)
 	mailex('', SANSSPACE_SMTP_EMAIL, $user->email,
 	'Learning Site Account Creation',
 	
-	"<img src='http://learningsite.waysidepublishing.com/images/wayside/logo2.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
+	"<img src='http://reviewlearningsite.waysidepublishing.com/images/wayside/logo2.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
 	<div style='margin-left:3%; height:100%; font-size:16px; color:#555555; line-height:1.1em; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''><p><div style='font-size:34px; color:#007ABB; font-weight:500; height:40px line-height:1.1em; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''>Hello $user->name!</div><br><br>We received your request to change your password for your Learning Site account and promptly sent this message.<br>
 	To change your password just click on the link below:<br><br>
 	<a href='dummy link'>Click to reset password</a><br>

@@ -12,8 +12,7 @@ function showObjectComments($object)
     }
    
    	echo "<div id='commentblock'>";   
-	if(	param('quickcomment') && 
-		controller()->rbac->objectAccess2($object, SSPACE_COMMAND_COMMENT_CREATE))
+	if(	param('quickcomment') )
 	{
         //echo CUFHtml::button('Add Comment', array('id'=>'showcommentinput','style'=>'margin-bottom:10px'));
         //JavascriptReady("$('#showcommentinput').click(function(){\$('#quickcomment').show();});");

@@ -82,7 +82,7 @@ function showAnnouncement($a){
                             \$(dividers[i]).delay(500).slideUp();
                             break;}}}  
                 \$.ajax({
-				    url: 'http://devlearningsite.waysidepublishing.com/site/announcementRemove',
+				    url: 'http://reviewlearningsite.waysidepublishing.com/site/announcementRemove',
 				    type: 'POST',
 				    data: { num: id },
 				    cache: false,

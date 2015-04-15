@@ -1,7 +1,7 @@
 <?php
 
 $search = getparam('search');
-$list = getdbolist('VCourse', "parentid=$code->objectid");
+$list = getdbolist('VCourse', "parentid=$textbook->id");
 //debuglog($code->objectid);
 
 showTableSorter('maintable', '{headers: {0: {sorter: false}}}');
@@ -33,7 +33,7 @@ foreach($list as $course)
 	$coursename = addslashes($course->name);
 	
 	echo <<<end
-<td><a href="javascript:doenrollment('$code->code', $course->id)">
+<td><a href="javascript:doenrollment($course->id)">
 <b>$course->name</b></a></td>
 end;
 	
@@ -45,7 +45,7 @@ end;
 }
 
 if(!$count)
-	echo "<td></td><td colspan=3><br>If you cannot locate your course, your teacher may not have created it yet. Contact your teacher for course information. Your student access code will remain valid until you choose a course.<br><br></td>";
+	echo "<td></td><td colspan=3><br>If you cannot locate your course, your teacher may not have created it yet. Contact your teacher for course information.<br><br></td>";
 
 echo "</tbody></table>";
 

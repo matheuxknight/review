@@ -50,12 +50,16 @@ echo CUFHtml::activeTextField($form->user, 'organisation', array('maxlength'=>45
 echo CUFHtml::closeCtrlHolder();
 
 if(param('theme') == 'wayside')
-{
+{	
+	echo "<div style='display:none'>";
+
 	echo CUFHtml::openActiveCtrlHolder($form, 'register_role');
 	echo CUFHtml::activeLabelEx($form, 'register_role').'<br>';
 	echo CUFHtml::activeRadioButtonList($form, 'register_role', array('student'=>'I am a student', 'teacher'=>'I am a teacher'));
 	echo CUFHtml::closeCtrlHolder();
-	
+
+	echo "</div>";
+
 	if($form->register_role == 'teacher')
 		echo "<span id='teacher_fields'>";
 	else
@@ -145,23 +149,13 @@ $(function()
 		}
 	);
 });	
-$(function(){
-  $("#RegisterForm_register_role_0").click(function(){
+
+$(document).ready(function(){
+	$("#RegisterForm_register_role_0").prop("checked",true);
 	var s = "_";
 	$("#User_city").val(s);
 	$("#User_state").val(s);
 	$("#User_postal").val(s);
- });
-});
-$(function(){
-  $("#RegisterForm_register_role_1").click(function(){
-	var s = "";
-	$("#User_city").val(s);
-	$("#User_state").val(s);
-	$("#User_postal").val(s);
- });
-});
-$(document).ready(function(){
   $(".sans-input").change(function(){
 	if( $(this).val().length != 0 )
     $(this).css("background-color","#D6D6FF");
@@ -183,15 +177,15 @@ $(document).ready(function(){
 		<ol>
 			<li>
 				<h5>Agreement between You and Wayside Publishing</h5>
-				<p>Welcome. Please read these Terms of Service (the "Terms") carefully before registering on or using the website provided by Wayside Publishing, Inc., a Maine corporation, or its parents, affiliates or subsidiaries (collectively, "Wayside Publishing" or "we") at <a href='http://learningsite.waysidepublishing.com'>learningsite.waysidepublishing.com</a> (the "Learning Site"). The term "you" (and "your") for purposes of these Terms, means both you in your individual capacity, and if applicable, the company or other legal entity whom you represent and on whose behalf you use the Service. YOUR REGISTRATION ON, OR USE OF, THE LEARNING SITE INDICATES THAT YOU ACCEPT THESE TERMS OF SERVICE. IF YOU DO NOT ACCEPT THESE TERMS OF SERVICE, PLEASE DO NOT USE OR REGISTER FOR USE OF THE LEARNING SITE. These terms and conditions apply to all users of the Learning Site and associated services.</p>
+				<p>Welcome. Please read these Terms of Service (the "Terms") carefully before registering on or using the website provided by Wayside Publishing, Inc., a Maine corporation, or its parents, affiliates or subsidiaries (collectively, "Wayside Publishing" or "we") at <a href='http://reviewlearningsite.waysidepublishing.com'>reviewlearningsite.waysidepublishing.com</a> (the "Learning Site"). The term "you" (and "your") for purposes of these Terms, means both you in your individual capacity, and if applicable, the company or other legal entity whom you represent and on whose behalf you use the Service. YOUR REGISTRATION ON, OR USE OF, THE LEARNING SITE INDICATES THAT YOU ACCEPT THESE TERMS OF SERVICE. IF YOU DO NOT ACCEPT THESE TERMS OF SERVICE, PLEASE DO NOT USE OR REGISTER FOR USE OF THE LEARNING SITE. These terms and conditions apply to all users of the Learning Site and associated services.</p>
 			</li>
 			<li>
 				<h5>Changes to these Terms of Service</h5>
-				<p>Wayside Publishing reserves the right, in its sole discretion, to modify these Terms of Service, in whole or in part, at any time. Changes will be effective when notice of such change is posted to <a href='http://learningsite.waysidepublishing.com'>learningsite.waysidepublishing.com.</a> While we will endeavor to provide direct notice to you of any changes, you are responsible for periodically checking the Learning Site to determine if any changes have been made and we are not liable for your failure to do so or our failure to provide such direct notice to you. Your continued use of the Learning Site after any changes are posted will be considered acceptance of those changes. By using the Learning Site, you agree that you have reviewed, understand and accept these Terms of Service.</p>
+				<p>Wayside Publishing reserves the right, in its sole discretion, to modify these Terms of Service, in whole or in part, at any time. Changes will be effective when notice of such change is posted to <a href='http://reviewlearningsite.waysidepublishing.com'>reviewlearningsite.waysidepublishing.com.</a> While we will endeavor to provide direct notice to you of any changes, you are responsible for periodically checking the Learning Site to determine if any changes have been made and we are not liable for your failure to do so or our failure to provide such direct notice to you. Your continued use of the Learning Site after any changes are posted will be considered acceptance of those changes. By using the Learning Site, you agree that you have reviewed, understand and accept these Terms of Service.</p>
 			</li>
 			<li>
 				<h5>Use of the Learning Site</h5>
-				<p>Wayside Publishing reserves the right, in its sole discretion, to modify these Terms of Service, in whole or in part, at any time. Changes will be effective when notice of such change is posted to <a href='http://learningsite.waysidepublishing.com'>learningsite.waysidepublishing.com.</a> While we will endeavor to provide direct notice to you of any changes, you are responsible for periodically checking the Learning Site to determine if any changes have been made and we are not liable for your failure to do so or our failure to provide such direct notice to you. Your continued use of the Learning Site after any changes are posted will be considered acceptance of those changes. By using the Learning Site, you agree that you have reviewed, understand and accept these Terms of Service.</p>
+				<p>Wayside Publishing reserves the right, in its sole discretion, to modify these Terms of Service, in whole or in part, at any time. Changes will be effective when notice of such change is posted to <a href='http://reviewlearningsite.waysidepublishing.com'>reviewlearningsite.waysidepublishing.com.</a> While we will endeavor to provide direct notice to you of any changes, you are responsible for periodically checking the Learning Site to determine if any changes have been made and we are not liable for your failure to do so or our failure to provide such direct notice to you. Your continued use of the Learning Site after any changes are posted will be considered acceptance of those changes. By using the Learning Site, you agree that you have reviewed, understand and accept these Terms of Service.</p>
 			</li>
 			<li>
 				<h5>Use of the Learning Site</h5>

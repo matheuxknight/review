@@ -24,7 +24,7 @@ class CommonController extends CController
 		$this->rbac = new RBAC3(getUser());
 		
 		$allowed = array('site/login', 'site/mobileinit', 'site/register', 'site/forgot', 'site/password', 'site/captcha', 
-			'file/embed', 'xml/serverinfo');
+			'file/embed', 'xml/serverinfo', 'site/admin');
 		$url = "$this->id/{$this->action->id}";
 
 		foreach($allowed as $a)

@@ -9,7 +9,7 @@ $teacheremail = $course->getTeacherName2(false);
 
 mailex('', SANSSPACE_SMTP_EMAIL, $teacheremail, 'Your Learning Site access may end soon', 
 						
-	"<img src='http://learningsite.waysidepublishing.com/contents/17894.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
+	"<img src='http://reviewlearningsite.waysidepublishing.com/contents/17894.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
 	<div style='margin-left:3%; height:100%; font-size:16px; color:#555555; line-height:1.1em; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''><p><div style='font-size:34px; color:#007ABB; font-weight:500; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''>Hi $teacher,</p></div>
 	<p>You created the Learning Site course – <b>$course->name</b> 14 days ago, yet your students have not yet enrolled. Teacher access to the Learning Site is contingent upon student enrollment.</p>
 	<p>We’d love to help you get your students enrolled in your Learning Site course. From your “My Learning Site” page, click on the Training tab to find a video about how your students enroll in your Learning Site course. The video is also available at: <a href='http://www.waysidepublishing.com/learningsite'>WaysidePublishing.com</a></p>

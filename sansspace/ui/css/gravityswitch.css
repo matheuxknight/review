@@ -7970,3 +7970,44 @@ footer .col-md-3 {
 	padding:5px;
 	vertical-align:bottom;
 }
+
+#audiocontainer{
+	max-width:584px;
+	}
+
+#audioimage{
+	max-width:480px;
+	padding:10px;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	display:block;
+	}
+
+#audioiframe{
+	margin-left:auto;
+	margin-right:auto;
+	box-shadow:5px 5px 5px #777777;
+	-webkit-box-shadow:5px 5px 5px #777777;
+	-moz-box-shadow:5px 5px 5px #777777;
+	border:1px solid #555555;
+	display:block;
+}	
+
+#audiotext{
+	font-size:.9em;
+	font-weight:700;
+	text-align:center;
+	display:block;
+	padding:15px;
+	}
+.textholder{
+	max-width:960px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:10px;
+	}
+	
+.activityholder{
+	margin-left:1%;
+	}
