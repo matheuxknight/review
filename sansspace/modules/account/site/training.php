@@ -50,13 +50,13 @@ footer{min-width:1060px;}
 						<li id='generallink1' class='listItem topiclistactive' description='The Signing Up for an Account video offers an in-depth look on how to create a Learning Site account as both a student and then as a teacher. The video covers this process by using the Account Registration form.' data='/file/embed?id=18087' onclick='setListItem(this)' name='first'>
 						Signing Up for an Account</li>
 
-						<li id='generallink2' class='listItem topiclistblur' description='' data='/file/embed?id=65442' onclick='setListItem(this)'>
+						<li id='generallink2' class='listItem topiclistblur' description='' data='/contents/65442.mp4' onclick='setListItem(this)'>
 						Signing Up for an Account - Teacher</li>
 						
 						<li id='generallink3' class='listItem topiclistblur' description='The Creating My Course video offers an in-depth look at how a teacher is able to create their own course on the Learning Site.' data='/file/embed?id=18088' onclick='setListItem(this)'>
 						Creating My Course</li>
 						
-						<li id='generallink4' class='listItem topiclistblur' description='The Enrolling in My Course video offers an in-depth look on how students are able to enroll within their teacher's course once it has been created by their instructor, first.' data='/file/embed?id=18089' onclick='setListItem(this)'>
+						<li id='generallink4' class='listItem topiclistblur' description='The Enrolling in My Course video offers an in-depth look on how students are able to enroll within their teacher\'s course once it has been created by their instructor, first.' data='/file/embed?id=18089' onclick='setListItem(this)'>
 						Enrolling in My Course</li>
 						
 						<li id='generallink5' class='listItem topiclistblur' description='The Navigating the Learning Site video takes a look at the main My Learning Site page upon login and how to navigate and utilize the various options from within.' data='/file/embed?id=42905' onclick='setListItem(this)'>
@@ -68,8 +68,8 @@ footer{min-width:1060px;}
 						
 						<li id='navigatelink2' class='listItem topiclistblur' description='The Assessing Student Performance and Grades webinar conducted on January 14, 2015, offers an in-depth look at how to assess survey and discussion forum participation, as well as how to grade all quiz types.' data='/file/embed?id=50633' onclick='setListItem(this)'>Student Performance and Grades</li>
 						
-						<!--<li id='navigatelink3' class='listItem topiclistblur' description='The Classroom Forum webinar provides insight as to what is and who your class might be able to use the Classroom Forum. This area can be used for group discussions, providing external context, assigning work, etc.' data='/file/embed?id=43368' onclick='setListItem(this)'>
-						Classroom Forum</li>-->
+						<li id='navigatelink3' class='listItem topiclistblur' description='The Classroom Forum webinar provides insight as to what is and who your class might be able to use the Classroom Forum. This area can be used for group discussions, providing external context, assigning work, etc.' data='/file/embed?id=43368' onclick='setListItem(this)'>
+						Classroom Forum</li>
 						
 						<li id='navigatelink4' class='listItem topiclistblur' description='The Learning Site Activities webinar conducted on January 28, 2015 offers an in-depth look at how students and teachers can navigate through all quiz types, flashcards, surveys, discussion forums, and PDF forms.' data='/file/embed?id=52473' onclick='setListItem(this)'>Learning Site Activities</li>
 						
