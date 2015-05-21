@@ -1,7 +1,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 $('iframe#innercontent').hide();
-$("#contactcontent").load("http://reviewlearningsite.waysidepublishing.com/site/contact/ #contactbody")
+$("#contactcontent").load("/site/contact/ #contactbody")
 $(".confluence-embedded-image").attr('src','');
 
 });

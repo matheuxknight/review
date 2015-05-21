@@ -16,7 +16,7 @@ $(document).ready(function()
  function expireAlert(clicked){
 	    var id = clicked.id.substr(7);
 		$.ajax({
-            url: 'http://reviewlearningsite.waysidepublishing.com/admin/announcementSave',
+            url: '/admin/announcementSave',
 			type: 'POST',
 			data: { num: id, action: 1, message: "", more: "" },
 			cache: false,
@@ -30,7 +30,7 @@ $(document).ready(function()
         var x = document.getElementById('editAlertMessage-'+id).value;
         var y = document.getElementById('editAlertURL-'+id).value;
 		$.ajax({
-            url: 'http://reviewlearningsite.waysidepublishing.com/admin/announcementSave',
+            url: '/admin/announcementSave',
 			type: 'POST',
 			data: { num: id, action: 2, message: x, more: y },
 			cache: false,
@@ -44,7 +44,7 @@ $(document).ready(function()
 		var x = document.getElementById('newAlertMessage').value;
 		var y = document.getElementById('newAlertURL').value;
 		$.ajax({
-            url: 'http://reviewlearningsite.waysidepublishing.com/admin/announcementSave',
+            url: '/admin/announcementSave',
 			type: 'POST',
 			data: { num: id, action: 3, message: x, more: y },
 			cache: false,

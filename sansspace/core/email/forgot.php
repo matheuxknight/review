@@ -8,11 +8,11 @@ $servername = getFullServerName();
 mailex('', SANSSPACE_SMTP_EMAIL, $user->email,
 'Learning Site Password Reset',
 
-"<img src='http://reviewlearningsite.waysidepublishing.com/images/wayside/logo2.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
+"<img src='/images/wayside/logo2.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
 <div style='margin-left:3%; height:100%; font-size:16px; color:#555555; line-height:1.1em; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''><p><div style='font-size:34px; color:#007ABB; font-weight:500; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''>Hello $user->firstname!</div><br>We received your request for password change and/or username retrieval for your Learning Site account and promptly sent this message.<br>
 Your credentials are as follows:</br></br>
 Username: $user->logon</br>
-Password: <a href='http://reviewlearningsite.waysidepublishing.com/site/password&guid=$user->guid'>Click to reset password</a><br>
+Password: <a href='/site/password&guid=$user->guid'>Click to reset password</a><br>
 After you have clicked the link above, simply choose a new password and save.<br><br>
 If you have opted to reset your password in error, or you had not done so at all, please disregard this message.<br>
 Have any questions or concerns? Don't hesitate to contact us at <a href='mailto:support@waysidepublishing.com'>support@waysidepublishing.com.</a>

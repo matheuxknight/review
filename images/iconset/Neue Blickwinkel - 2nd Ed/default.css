@@ -1,0 +1,92 @@
+.page #headermenu
+{
+	font-size: 1vw;
+}
+
+.page #headermenu a
+{
+	color: #1a1a1a;
+}
+
+.ui-widget-header
+{
+	background: #d01820;
+	border: 0px;
+	color: #ffffff;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default, 
+.ui-widget-header .ui-state-default
+{
+	background: #d01820;
+	border: 1px solid #d01820;
+	color: #ffffff;
+}
+
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited
+{
+	color: #ffffff;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active, 
+.ui-widget-header .ui-state-active
+{
+	background: white;
+	color: #d01820;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover
+{
+	background: white;
+	color: #d01820;
+}
+
+.ui-state-hover a,
+.ui-state-hover a:link,
+.ui-state-hover a:visited
+{
+	color: #d01820;
+}
+
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited
+{
+	color: #d01820;
+}
+
+html, body
+{
+	color: #555555;
+}
+
+a
+{
+	color: #428bca;
+}
+ 
+footer
+{
+	background: #d01820;
+	color: white;
+}
+
+.ui-button-text-only .ui-button-text{
+padding:5px;
+}
+ footer a {
+    color: white;
+    text-decoration: underline;
+    -moz-text-decoration-style: dotted;
+    -webkit-text-decoration-style: dotted; }
+    footer a:hover, footer a:active, footer a:focus, footer a:visited {
+      color: white;
+      text-decoration: underline;
+      -moz-text-decoration-style: dotted;
+      -webkit-text-decoration-style: dotted; }

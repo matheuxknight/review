@@ -8,15 +8,15 @@ function initSearchBar(id, searchtitle, format, defaultsort, defaultsemester, de
 	currentobjectid = id;
 	currentsearchtitle = searchtitle;
 
-//	$('#showpanel').button({icons: {secondary: "ui-icon-triangle-1-s"}, text: true});
-//	$('#showpanel').change(function(event)
-//	{
-//		if($('#showpanel').is(':checked'))
-//			$('#searchpanel').css({display:'inline'});
-//
-//		else
-//			$('#searchpanel').css({display:'none'});
-//	});
+	$('#showpanel').button({icons: {secondary: "ui-icon-triangle-1-e"}, text: true});
+	$('#showpanel').change(function(event)
+	{
+		if($('#showpanel').is(':checked'))
+			$('#searchpanel').css({display:'inline'});
+
+		else
+			$('#searchpanel').css({display:'none'});
+	});
 
 	$('#'+format).attr('checked', 'true');
 	$('#showall').attr('checked', 'true');
@@ -91,14 +91,12 @@ function refreshContentPage()
 //		"<p style='margin-left: 300px;'><img src='/images/ui/loading_white.gif'></p>");
 
 	var searchstring = $('#search').val();
-	if(searchstring == currentsearchtitle || searchstring == undefined) searchstring = '';
-	
-	var coursesearchstring = $('#course-search').val();
+	if(searchstring == currentsearchtitle)
+		searchstring = '';
 	
 	$.get("/html/objectresults"+
 		"&id="+currentobjectid+
 		"&s="+searchstring+
-		"&coursesearch="+coursesearchstring+
 		"&sort="+$('#sortdropdown').val()+
 		"&filter="+$('#filterdropdown').val()+
 		"&semesterid="+$('#semesterid').val()+

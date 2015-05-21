@@ -11,6 +11,7 @@ include 'lib/pageheader.php';
 echo "</head>";
 
 echo "<body class='page'>";
+require_once('analyticstracking.php');
 echo "<div class='wrap' style='min-height:100%; position:relative'>";
 
 if(controller()->id == 'docview')

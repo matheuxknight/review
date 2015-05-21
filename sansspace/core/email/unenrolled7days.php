@@ -7,7 +7,7 @@ $servername = getFullServerName();
 
 mailex('', SANSSPACE_SMTP_EMAIL, $user->email, 'Need help enrolling into your course?', 
 						
-	"<img src='http://reviewlearningsite.waysidepublishing.com/contents/17894.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
+	"<img src='http://learningsite.waysidepublishing.com/contents/17894.png' alt='logo'  class='alignnone size-full wp-image-533'><br><br>
 	<div style='margin-left:3%; height:100%; font-size:16px; color:#555555; line-height:1.1em; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''><p><div style='font-size:34px; color:#007ABB; font-weight:500; font-family:Gotham, 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif''>Hi $user->firstname,</p></div>
 	<p>We noticed that you, '<b>$user->logon</b>', haven’t enrolled in a course.</p>
 	<p>Can we help? To enroll in a course, just click the “Enroll in my course” link in the upper right hand corner of the screen after logging in. We’ve created a helpful video to walk you through the process:  <a href='http://www.waysidepublishing.com/learningsite'>WaysidePublishing.com</a></p>

@@ -485,7 +485,7 @@ function RbacDefaultCommands()
 			'url'=>'comment/create',
 			'objecttype'=>true,
 			'icon'=>'/images/base/newcomment.png',
-			'roles'=>array(SSPACE_ROLE_USER),
+			'roles'=>array(SSPACE_ROLE_STUDENT, SSPACE_ROLE_TEACHER, SSPACE_ROLE_CONTENT, SSPACE_ROLE_FORUM),
 		),
 
 		array(

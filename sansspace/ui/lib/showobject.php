@@ -14,24 +14,24 @@ function showFolderContents($id)
 //	if(IsMobileEmbeded())
 //		$noheader = "&noheader";
 
-// 	if(intval($id))
-// 	{
-// 		$object = getdbo('Object', $id);
-// 		if($object)
-// 		{
-// 			if(!count($object->children) && $object->type != CMDB_OBJECTTYPE_LINK)
-// 			{
-// 				echo <<<END
-// <div id='results'></div>
-// <script>$(function(){
-// 	$.get("/html/objectresults&id=$id&sort={$defaultsort}",
-// 		function(data){ $('#results').append(data);});});
-// </script>
-// END;
-// 				return;
-// 			}
-// 		}
-// 	}
+	if(intval($id))
+	{
+		$object = getdbo('Object', $id);
+		if($object)
+		{
+			if(!count($object->children) && $object->type != CMDB_OBJECTTYPE_LINK)
+			{
+				echo <<<END
+<div id='results'></div>
+<script>$(function(){
+	$.get("/html/objectresults&id=$id&sort={$defaultsort}",
+	function(data){ $('#results').append(data);});});
+</script>
+END;
+				return;
+			}
+		}
+	}
 
 	////////////////////////////////////////////////////////////
 	
@@ -105,13 +105,18 @@ function showFolderContents($id)
 	$semesterselect = CHtml::dropDownList('semesterid', $semesterid,
 		Semester::model()->options, array('title'=>'Filter by semester'));
 	
-//	$extrastyle = '';
-//	if(!controller()->rbac->globalAdmin() && param('theme') == 'wayside')
-//		$extrastyle = 'display: none; height: 0px; width: 0px;';
-
+	$extrastyle = '';
+	if(!controller()->rbac->globalAdmin() && param('theme') == 'wayside')
+		$extrastyle = 'display: none; height: 0px; width: 0px;';
+		
 	echo <<<END
 
-	<div id="searchpanel" style="display: $displayfilters; margin-top: 20px;" >
+	<div id="searchdiv" style="$extrastyle margin-top:10px" >
+	<input type="checkbox" id="showpanel" $allchecked />
+		<label for="showpanel" title="Search from this folder">Filters</label>
+
+	&nbsp;
+	<span id="searchpanel" style="display: $displayfilters;" >
 
 	<input type="checkbox" id="recursive" $allchecked />
 		<label for="recursive" title='Show all contents recursively' >All</label>
@@ -154,7 +159,7 @@ function showFolderContents($id)
 		<input type="radio" id="showdetail" name="showoptions2"/><label for="showdetail">Detailed</label>
 	</span>
 
-	</div>
+	</span></div>
 
 	<div id='results' style='margin-top:15px'>
 	<p style='margin-left: 300px;'>$loading_image</p>

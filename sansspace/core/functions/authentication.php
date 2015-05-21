@@ -117,7 +117,7 @@ class SansspaceIdentity
 			if($user) return $user;
 		}
 		
-		return $this->error('We\'re sorry, the username and password you provided were incorrect.<br>If you are using your old Legacy Learning Site credentials, you will need to create a new account.');
+		return $this->error('We\'re sorry, the username and password you provided were incorrect.<br>Please use the <a href="../site/forgot">"Forgot your username or password?"</a> feature to determine your credentials if you continue to experience login problems.');
 	}
 
 	public function validate($user)
