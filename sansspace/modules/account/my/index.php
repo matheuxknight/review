@@ -36,9 +36,7 @@ end;
 	echo userImage($user, 100);
 	echo "</a>";
 	echo "</div>";
-	if($user->id == 8304){
-		echo "<h2 align='center' style='color:red'>Please click course name below to access testing area</h2>";
-	}
+
 	if(controller()->rbac->globalAdmin())
 	{
 		echo "
@@ -46,7 +44,7 @@ end;
 				<a href='/textbook/addstudentcode' class='course-reg-link' >
 					<font class='course-reg-font'>Enroll in my course</font>
 				</a>
-				<a class='popup' title='Enroll in my course' href='javascript:void(0)' onclick='showVideo(this)' data='/file/embed?id=18089'>
+				<a class='popup' title='Enroll in my course' href='javascript:void(0)' onclick='showVideo(this)' data='http://reviewlearningsite.waysidepublishing.com/file/embed?id=18089'>
 					<em class='fa fa-question-circle popup-question'></em>
 				</a>
 			</h4>
@@ -54,7 +52,7 @@ end;
 				<a href='/textbook/addteachercourse' class='course-reg-link'>
 					<font class='course-reg-font'>Create my course</font>
 				</a>
-				<a class='popup'   title='Create my course' href='javascript:void(0)' onclick='showVideo(this)' data='/file/embed?id=18088'>
+				<a class='popup'   title='Create my course' href='javascript:void(0)' onclick='showVideo(this)' data='http://reviewlearningsite.waysidepublishing.com/file/embed?id=18088'>
 					<em class='fa fa-question-circle popup-question'></em>
 				</a>
 			</h4>
@@ -69,21 +67,18 @@ end;
 					<a href='/textbook/addstudentcode' class='course-reg-link' >
 						<font class='course-reg-font' >Enroll in my course</font>
 					</a>
-					<a class='popup' title='Enroll in my course' href='javascript:void(0)' onclick='showVideo(this)' data='/file/embed?id=18089' >
-						<em class='fa fa-question-circle popup-question'></em>
-					</a>
 				</h4>";
-		
-		if(controller()->rbac->globalTeacher() && $user->id != 8304)
-			echo "
-				<h4 align='right' class='error popup-text-header'>
-					<a href='/textbook/addteachercourse' class='course-reg-link' >
-						<font class='course-reg-font'>Create my course</font>
-					</a>	
-					<a class='popup' title='Create my course' href='javascript:void(0)' onclick='showVideo(this)' data='/file/embed?id=18088'>
-						<em class='fa fa-question-circle popup-question'></em>
-					</a>
-				</h4>";
+//		
+//		if(controller()->rbac->globalTeacher())
+//			echo "
+//				<h4 align='right' class='error popup-text-header'>
+//					<a href='/textbook/addteachercourse' class='course-reg-link' >
+//						<font class='course-reg-font'>Create my course</font>
+//					</a>	
+//					<a class='popup' title='Create my course' href='javascript:void(0)' onclick='showVideo(this)' //data='http://reviewlearningsite.waysidepublishing.com/file/embed?id=18088'>
+//						<em class='fa fa-question-circle popup-question'></em>
+//					</a>
+//				</h4>";
 	}
 	
 echo "<div class='row'>";

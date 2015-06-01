@@ -56,7 +56,7 @@ footer{min-width:1060px;}
 						<li id='generallink3' class='listItem topiclistblur' description='The Creating My Course video offers an in-depth look at how a teacher is able to create their own course on the Learning Site.' data='/file/embed?id=18088' onclick='setListItem(this)'>
 						Creating My Course</li>
 						
-						<li id='generallink4' class='listItem topiclistblur' description='The Enrolling in My Course video offers an in-depth look on how students are able to enroll within their teacher\'s course once it has been created by their instructor, first.' data='/file/embed?id=18089' onclick='setListItem(this)'>
+						<li id='generallink4' class='listItem topiclistblur' description='The Enrolling in My Course video offers an in-depth look on how students are able to enroll within their teachers course once it has been created by their instructor, first.' data='/file/embed?id=18089' onclick='setListItem(this)'>
 						Enrolling in My Course</li>
 						
 						<li id='generallink5' class='listItem topiclistblur' description='The Navigating the Learning Site video takes a look at the main My Learning Site page upon login and how to navigate and utilize the various options from within.' data='/file/embed?id=42905' onclick='setListItem(this)'>
