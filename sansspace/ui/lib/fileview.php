@@ -15,7 +15,36 @@ function showFileContent($file)
 		case CMDB_FILETYPE_SRT:
 		case CMDB_FILETYPE_BOOKMARKS:
 		case CMDB_FILETYPE_MEDIA:
-			showMediaContent($file);
+			echo "
+				<style>
+					video
+					{
+						width: 85%;
+						margin:0;
+						padding:20px 10px;
+					}
+					audio
+					{
+						width: 100%;
+						margin: 0;
+						padding:40px 10px;
+					}
+				</style>";
+			if($file->hasvideo == 1){
+				echo"
+				<video controls>
+					<source src='/contents/";echo $file->id;echo ".mp4' type='video/mp4'>
+					Your browser does not support the video tag.
+				</video>";
+			}	
+			else{
+				echo"
+				<audio controls>
+					<source src='/contents/";echo $file->id;echo ".mp3' type='audio/mp3'>
+					Your browser does not support the audio tag.
+				</audio>";
+			}	
+			//showMediaContent($file);
 			break;
 		
 		case CMDB_FILETYPE_LIVE:

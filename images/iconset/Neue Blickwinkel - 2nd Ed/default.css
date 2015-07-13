@@ -1,92 +1,108 @@
 .page #headermenu
 {
-    font-size: 1vw;
+	font-size: 1vw;
 }
 
 .page #headermenu a
 {
-    color: #1a1a1a;
+	color: #292929;
 }
 
 .ui-widget-header
 {
-    background: #000000;
-    border: 0px;
-    color: #ffffff;
+	background: #292929;
+	border: 0px;
+	color: #ffffff;
 }
 
 .ui-state-default,
-.ui-widget-content .ui-state-default,
+.ui-widget-content .ui-state-default, 
 .ui-widget-header .ui-state-default
 {
-    background: #000000;
-    border: 1px solid #000000;
-    color: #ffffff;
+	background: #292929;
+	border: 1px solid #292929;
+	color: #ffffff;
 }
 
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited
 {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 .ui-state-active,
-.ui-widget-content .ui-state-active,
+.ui-widget-content .ui-state-active, 
 .ui-widget-header .ui-state-active
 {
-    background: white;
-    color: #000000;
+	background: white;
+	color: #292929;
 }
 
 .ui-state-hover,
-.ui-widget-content .ui-state-hover,
+.ui-widget-content .ui-state-hover, 
 .ui-widget-header .ui-state-hover
 {
-    background: white;
-    color: #000000;
+	background: white;
+	color: #292929;
 }
 
 .ui-state-hover a,
 .ui-state-hover a:link,
 .ui-state-hover a:visited
 {
-    color: #000000;
+	color: #292929;
 }
 
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited
 {
-    color: #000000;
+	color: #292929;
 }
 
 html, body
 {
-    color: #555555;
+	color: #555555;
 }
 
 a
 {
-    color: #428bca;
+	color: #428bca;
 }
-
+ 
 footer
 {
-    background: #f6d45b;
-    color: #222222;
+	background: #F2B603;
+	color: #A97F02;	
 }
 
-.ui-button-text-only .ui-button-text{
-    padding:5px;
+.powered-by{
+	color: #A97F02;
 }
-footer a {
-    color: #222222;
+	
+.ui-button-text-only .ui-button-text{
+padding:5px;
+}
+ footer a {
+    color: #A97F02;
     text-decoration: underline;
     -moz-text-decoration-style: dotted;
     -webkit-text-decoration-style: dotted; }
-footer a:hover, footer a:active, footer a:focus, footer a:visited {
-    color: #222222;
-    text-decoration: underline;
-    -moz-text-decoration-style: dotted;
-    -webkit-text-decoration-style: dotted; }
+    footer a:hover, footer a:active, footer a:focus, footer a:visited {
+      color: #A97F02;
+      text-decoration: underline;
+      -moz-text-decoration-style: dotted;
+      -webkit-text-decoration-style: dotted; }
+	  
+#searchdiv .ui-button-text {
+	color: #FFFFFF;
+	background-color: #D01820;
+}
+#searchdiv label{
+	border: 1px solid #D01820;
+}
+
+#contactlink{
+	color: #A97F02;
+}

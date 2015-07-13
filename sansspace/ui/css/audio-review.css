@@ -1,0 +1,43 @@
+
+#AudioReview {
+    width: 100%;
+}
+
+#AudioReview audio {
+    width: 100%;
+}
+
+#AudioReview .comments-wrapper {
+    float: left;
+    width: 100%;
+}
+
+#AudioReview .comments-wrapper .comment {
+    float: left;
+    clear: both;
+}
+
+#AudioReview .comments-wrapper .comment.active {
+    background: yellow;
+}
+
+#AudioReview .comments-wrapper .comment a {
+    float: left;
+    margin: 0 5px;
+}
+
+#AudioReview .comments-wrapper .comment span {
+    float: left;
+    margin: 0 5px;
+    clear: none;
+}
+
+#AudioReview h4 {
+    float: left;
+    clear: both;
+    width: 100%;
+}
+
+#AudioReview button {
+    margin-left: 5px;
+}

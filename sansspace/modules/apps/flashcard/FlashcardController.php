@@ -25,7 +25,8 @@ class FlashcardController extends CommonController
 	public function actionView()
 	{
 		$object = $this->loadobject();
-		$this->render('view', array('object'=>$object));
+
+        include "view.php";
 	}
 	
 	public function actionAdmin()

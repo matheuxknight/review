@@ -333,11 +333,11 @@ if($attemptid && $questionid)
 	
 	if($file)
 	{
-		echo "<br>Attached File: ";
+		//echo "<br>Attached File: ";
 		
-		echo objectImage($file, 22) . ' ' . l($file->name, array('file/', 'id'=>$file->id));
+		//echo objectImage($file, 22) . ' ' . l($file->name, array('file/', 'id'=>$file->id));
 		$duration = sectoa($file->duration/1000);
-		if($file->duration) echo " ($duration)";
+		//if($file->duration) echo " ($duration)";
 
 		switch($file->filetype)
 		{
@@ -347,7 +347,18 @@ if($attemptid && $questionid)
 		
 			case CMDB_FILETYPE_MEDIA:
 				echo "<br><br><div style='width:66%'>";
-				showMediaContent($file);
+//				showMediaContent($file);
+                ?>
+                <div id="AudioReview"></div>
+                <link href="/sansspace/ui/css/audio-review.css" type="text/css" rel="stylesheet" />
+                <script src="/bower_components/underscore/underscore-min.js"></script>
+                <script src="/sansspace/ui/js/audio-review.js"></script>
+                <script>
+                    $(document).ready(function(){
+                        AudioReview.init('#AudioReview', <?= $file->id ?>, 'teacher');
+                    });
+                </script>
+                <?php
 				echo "</div>";
 				break;
 					

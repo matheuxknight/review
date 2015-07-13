@@ -1,0 +1,12 @@
+{
+    "name": "root/old-app",
+    "require": {
+        "raveren/kint": "^0.9.1"
+    },
+    "authors": [
+        {
+            "name": "Alex aka TPETb Tretyakov",
+            "email": "alextret@gmail.com"
+        }
+    ]
+}

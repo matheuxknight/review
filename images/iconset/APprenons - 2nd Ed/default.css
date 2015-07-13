@@ -1,78 +1,101 @@
 .page #headermenu
 {
-    font-size: 1vw;
+	font-size: 1vw;
 }
 
 .page #headermenu a
 {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 .ui-widget-header
 {
-    background: #593957;
-    border: 0px;
-    color: #ffffff;
+	background: #593957;
+	border: 0px;
+	color: #ffffff;
 }
 
 .ui-state-default,
-.ui-widget-content .ui-state-default,
+.ui-widget-content .ui-state-default, 
 .ui-widget-header .ui-state-default
 {
-    background: #593957;
-    border: 1px solid #593957;
-    color: #ffffff;
+	background: #593957;
+	border: 1px solid #593957;
+	color: #ffffff;
 }
 
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited
 {
-    color: #ffffff;
+	color: #ffffff;
 }
 
 .ui-state-active,
-.ui-widget-content .ui-state-active,
+.ui-widget-content .ui-state-active, 
 .ui-widget-header .ui-state-active
 {
-    background: white;
-    color: #593957;
+	background: white;
+	color: #593957;
 }
 
 .ui-state-hover,
-.ui-widget-content .ui-state-hover,
+.ui-widget-content .ui-state-hover, 
 .ui-widget-header .ui-state-hover
 {
-    background: white;
-    color: #593957;
+	background: white;
+	color: #593957;
 }
 
 .ui-state-hover a,
 .ui-state-hover a:link,
 .ui-state-hover a:visited
 {
-    color: #593957;
+	color: #593957;
 }
 
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited
 {
-    color: #593957;
+	color: #593957;
 }
 
 html, body
 {
-    color: #555555;
+	color: #555555;
 }
 
 a
 {
-    color: #428bca;
+	color: #428bca;
 }
-
+ 
 footer
 {
-    background: #593957;
-    color: #ffffff;
+	background: #593957;
+	color: #875B8A;
+	}
+
+ footer a {
+    color: #875B8A;
+    text-decoration: underline;
+    -moz-text-decoration-style: dotted;
+    -webkit-text-decoration-style: dotted; }
+    footer a:hover, footer a:active, footer a:focus, footer a:visited {
+      color: #875B8A;
+      text-decoration: underline;
+      -moz-text-decoration-style: dotted;
+      -webkit-text-decoration-style: dotted; }
+	
+#searchdiv .ui-button-text {
+	color: #292929;
+	background-color: #FFCE00;
+}
+#searchdiv label{
+	border: 1px solid #FFCE00;
+}
+
+#contactlink{
+	color: #B08DAB;
 }

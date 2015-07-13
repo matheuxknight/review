@@ -1,0 +1,20 @@
+Options +FollowSymlinks
+
+AddType application/vnd.ms-fontobject .eot
+AddType application/font-woff .woff
+AddType application/font-woff .woff2
+AddType application/x-font-truetype .ttf
+AddType image/svg+xml .svg
+AddType application/x-font-opentype .otf
+
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+
+# prevent httpd from serving dotfiles (.htaccess, .svn, .git, etc.)
+#RedirectMatch 403 /\..*$
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# otherwise forward it to index.php
+RewriteRule ^(.*)$ index.php?r=$1 [L,QSA]

@@ -114,7 +114,7 @@ function ObjectQueryIterate(&$addids, $object)
 
 	$os = getdbolist('Object', "parentid=$object->id and type=".CMDB_OBJECTTYPE_LINK);
 	foreach($os as $o)
-		ObjectQueryProcessItem(&$addids, $o->link);
+		ObjectQueryProcessItem($addids, $o->link);
 
 	$parent = $object->parent;
 	while($parent && $parent->model)
@@ -123,7 +123,7 @@ function ObjectQueryIterate(&$addids, $object)
 		$rcs = getdbolist('Object', "parentid=$parent->id and type=".CMDB_OBJECTTYPE_LINK);
 		if($rcs) foreach($rcs as $rc)
 		{
-			ObjectQueryProcessItem(&$addids, $rc->link);
+			ObjectQueryProcessItem($addids, $rc->link);
 			$addids[$rc->id] = true;
 		}
 
@@ -133,7 +133,7 @@ function ObjectQueryIterate(&$addids, $object)
 
 function ObjectQueryProcessItem(&$addids, $object, $func=null)
 {
-	if($func) $func(&$addids, $object);
+	if($func) $func($addids, $object);
 	$addids[$object->id] = true;
 }
 
@@ -148,7 +148,7 @@ function buildUserQuery($user)
 	foreach($objectids as $id=>$roleid)
 	{
 		$object = getdbo('Object', $id);
-		ObjectQueryProcessItem(&$addids, $object, ObjectQueryIterate);
+		ObjectQueryProcessItem($addids, $object, ObjectQueryIterate);
 	}
 
 	/////////////////////////////////////////////

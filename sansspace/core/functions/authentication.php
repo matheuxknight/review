@@ -7,6 +7,7 @@ class SansspaceIdentity
 	
 	public function __construct()
 	{
+	user(); //quick fix
 	//	debuglog("SansspaceIdentity::__construct");
 		if(strstr($_SERVER['REQUEST_URI'], 'internaluser=system')) return;
 		if(strstr($_SERVER['REQUEST_URI'], '/sansspacehost/')) return;
